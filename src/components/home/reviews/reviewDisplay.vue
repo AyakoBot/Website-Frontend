@@ -24,7 +24,7 @@ const hovering = (review: ReviewType | null) => {
   <h1 class="mt-20">
     and has an average score of
     <ColorFade :text="String(averageScore)" />
-    Stars per Review
+    stars per review
   </h1>
 
   <ReviewCarousel :reviews="reviews" @hover="(r) => hovering(r)" />

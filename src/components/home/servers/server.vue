@@ -12,7 +12,7 @@ const props = defineProps<{
   <a
     :href="props.vanity ? `https://discord.gg/${props.vanity}` : ''"
     target="_blank"
-    class="flex w-48 h-28 bg-gradient-to-br from-fuchsia-800 to-neutral-900 rounded-2xl"
+    class="flex w-48 h-28 bg-gradient-to-br from-red-900 to-neutral-900 rounded-2xl"
   >
     <div
       class="relative flex p-5 w-48 h-28 justify-between items-center rounded-2xl shadow-main"

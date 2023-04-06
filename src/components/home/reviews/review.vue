@@ -18,7 +18,7 @@ const pfpError = (index: number) => {
 <template>
   <a
     target="_blank"
-    class="w-48 h-28 bg-gradient-to-br from-fuchsia-800 to-neutral-900 rounded-2xl transition-all duration-300 ease-in-out"
+    class="w-48 h-28 bg-gradient-to-br from-red-900 to-transparent rounded-2xl transition-all duration-300 ease-in-out"
     :id="`review-${props.index}`"
   >
     <div

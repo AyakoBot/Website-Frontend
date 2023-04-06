@@ -67,7 +67,7 @@ const numberWithCommas = (x: number) => {
     <ColorFade :text="String(numberWithCommas(serverCount))" />
     Discord communities with
     <ColorFade :text="String(numberWithCommas(userCount))" />
-    Members
+    members
   </h1>
 
   <ServerCarousel :servers="servers" />
