@@ -40,4 +40,18 @@ import Preview from "../components/home/features/feature.vue";
   <ReviewHover />
 
   <Preview />
+
+  <div class="mx-2 mt-5">
+    Ready to automate and streamline your community?
+
+    <div class="w-full md:w-auto flex justify-center items-center">
+      <RouterLink
+        to="/invite"
+        class="text-[#fe3521] p-2 px-6 bg-white rounded-xl text-lg hover:text-white hover:bg-[#fe3521] transition-all font-bold mt-5"
+        id="inviteAyako"
+      >
+        Invite Ayako
+      </RouterLink>
+    </div>
+  </div>
 </template>

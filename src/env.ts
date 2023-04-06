@@ -1,4 +1,4 @@
 export default {
-  api: "https://api.ayakobot.com",
+  api: "http://localhost:5173/api",
   cdn: "https://cdn.ayakobot.com",
 };
