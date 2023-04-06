@@ -21,7 +21,7 @@ onMounted(() => {
       b.animate(
         {
           left: `${x.value - window.scrollX - 130}px`,
-          top: `${y.value - window.scrollY - 180}px`,
+          top: `${y.value - window.scrollY - 125}px`,
         },
         { duration: 3000, fill: "forwards" }
       );
@@ -30,7 +30,7 @@ onMounted(() => {
 });
 
 const classes =
-  "bg-white h-52 fixed aspect-square left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#b0ff00] blur-[150px] to-[#fe3521] opacity-0 blob z-[-9998] overflow-hidden";
+  "bg-white h-52 fixed aspect-square left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#b0ff00] to-[#fe3521] blur-[150px] opacity-0 blob z-[-9998] overflow-hidden";
 </script>
 
 <template>
