@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+mains:
+171717 !
+31a1de
+42f5c5
+31de40
+b0ff00 !
+
+accents: 
+fe3521 orange
+3dff56 green
+*/
+
+body,
+html,
+a,
+p,
+button {
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  font-size: 1.25em;
+  overflow-wrap: normal;
+  word-break: normal;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: hidden;
+  text-align: center;
+  line-height: 1;
+  word-wrap: break-word;
+  background: linear-gradient(
+    142deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(98, 14, 14, 1) 73%
+  );
+  background-size: 100% 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+body:before {
+  background-attachment: scroll;
+  content: "";
+  display: block;
+  height: 60vh;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: scale(1);
+  width: 100vw;
+  z-index: 0;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body:after {
+  background-color: #000000;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out 0.25s, visibility 1s 0.25s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1;
+}
+
+.webkit-background-clip {
+  -webkit-background-clip: text;
+}
+
+.webkit-text-fill-color {
+  -webkit-text-fill-color: transparent;
+}
+
+/* Medium and large screens */
+@media screen and (min-width: 640px) {
+  body:before {
+    height: 100vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.5em;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6b21a8;
+  border-radius: 10px;
+}
