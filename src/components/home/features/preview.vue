@@ -7,6 +7,8 @@ const props = defineProps<{
   placeholderImg: string;
 }>();
 const subtitleArgs = props.subtitle.split(/\s/g);
+let isHovering = false;
+let isShowing = false;
 
 const hovering = (hovers: boolean) => {
   const subtitles = document.getElementsByClassName(`subtitles-${props.i}`);
@@ -16,6 +18,10 @@ const hovering = (hovers: boolean) => {
   ) as HTMLElement;
 
   if (hovers) {
+    isHovering = hovers;
+    if (isShowing) return;
+    isShowing = true;
+
     [...Array.from(subtitles), img].forEach((subtitle, i) => {
       subtitle.animate(
         [
@@ -37,27 +43,33 @@ const hovering = (hovers: boolean) => {
       fill: "forwards",
     });
   } else {
-    [...Array.from(subtitles), img].forEach((subtitle, i) => {
-      subtitle.animate(
-        [
-          { opacity: 1, transform: "translateY(0)" },
-          { opacity: 0, transform: "translateY(40%)" },
-        ],
-        {
-          duration: 300,
-          easing: "cubic-bezier(0.9, 0.06, 0.15, 0.9)",
-          delay: i * 50 + 1500,
-          fill: "forwards",
-        }
-      );
-    });
+    isHovering = hovers;
+    setTimeout(() => {
+      if (isHovering) return;
+      isShowing = false;
 
-    placeholderImg.animate([{ opacity: 0 }, { opacity: 1 }], {
-      duration: 300,
-      easing: "cubic-bezier(0.9, 0.06, 0.15, 0.9)",
-      fill: "forwards",
-      delay: (subtitles.length + 1) * 70 + 1500,
-    });
+      [...Array.from(subtitles), img].forEach((subtitle, i) => {
+        subtitle.animate(
+          [
+            { opacity: 1, transform: "translateY(0)" },
+            { opacity: 0, transform: "translateY(40%)" },
+          ],
+          {
+            duration: 300,
+            easing: "cubic-bezier(0.9, 0.06, 0.15, 0.9)",
+            delay: i * 50,
+            fill: "forwards",
+          }
+        );
+      });
+
+      placeholderImg.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 300,
+        easing: "cubic-bezier(0.9, 0.06, 0.15, 0.9)",
+        fill: "forwards",
+        delay: (subtitles.length + 1) * 70,
+      });
+    }, 1500);
   }
 };
 </script>
