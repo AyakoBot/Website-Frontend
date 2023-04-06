@@ -114,6 +114,6 @@ body:after {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #6b21a8;
+  background: transparent;
   border-radius: 10px;
 }

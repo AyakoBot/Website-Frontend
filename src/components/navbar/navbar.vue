@@ -53,17 +53,17 @@ const menuToggle = () => {
 <template>
   <div class="bg-neutral-900/75 shadow-main z-50">
     <nav class="container mx-auto px-4 py-2 flex items-center justify-between">
-      <div class="flex items-center">
-        <router-link to="/">
+      <router-link to="/">
+        <div class="flex items-center">
           <img
             class="w-10 h-auto"
             src="https://cdn.ayakobot.com/website_assets/NavBarIcon.png"
             alt="Ayako logo"
           />
-        </router-link>
-        <h1 class="text-lg ml-2 font-bold text-white">Ayako</h1>
-        <p class="text-sm text-red-600 mt-1 ml-3">Discord Bot</p>
-      </div>
+          <h1 class="text-lg ml-2 font-bold text-white">Ayako</h1>
+          <p class="text-sm text-red-600 mt-1 ml-3">Discord Bot</p>
+        </div>
+      </router-link>
       <div class="hidden xl:flex items-center">
         <NavBarButton link="invite" text="Invite" />
         <!-- <NavBarButton link="commands" text="Commands" /> -->

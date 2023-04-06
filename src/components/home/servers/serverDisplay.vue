@@ -65,7 +65,7 @@ const numberWithCommas = (x: number) => {
   <h1 class="mt-60" id="counters">
     Ayako manages
     <ColorFade :text="String(numberWithCommas(serverCount))" />
-    Discord Communities with
+    Discord communities with
     <ColorFade :text="String(numberWithCommas(userCount))" />
     Members
   </h1>

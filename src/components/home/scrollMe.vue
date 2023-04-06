@@ -25,7 +25,7 @@ setInterval(() => {
     <svg class="animate-bounce w-20 fixed bottom-0" viewBox="0 0 24 24">
       <path
         d="M16.59 8.59004L12 13.17L7.41 8.59004L6 10L12 16L18 10L16.59 8.59004Z"
-        fill="#8c8c8c"
+        fill="#b0ff00"
       ></path>
     </svg>
   </div>

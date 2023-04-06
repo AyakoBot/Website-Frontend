@@ -64,7 +64,7 @@ const hovering = (hovers: boolean) => {
 
 <template>
   <div
-    class="border-solid border-[0.5vmin] h-96 xl:h-[75vmin] relative border-orange-700 w-11/12 xl:w-5/12 aspect-[1/1.6] before:content-[''] before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-[linear-gradient(130deg,_transparent_0%_33%,_rgb(236,64,122)_66%,_rgb(253,196,53)_100%)] before:bg-[length:300%_300%] before:bg-[0%_0%] before:transition-all before:duration-1000 before:ease-in-out hover:before:bg-[100%_100%] before:-z-10 hover:border-[rgba(0,0,0,0)] ease-in-out duration-1000 hover:before:[scale:1.08_1.03] rounded-2xl before:rounded-2xl"
+    class="border-solid border-[0.5vmin] h-96 xl:h-[60vmin] relative border-orange-700 w-11/12 xl:w-3/12 aspect-[1/1.6] before:content-[''] before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-[linear-gradient(130deg,_transparent_0%_33%,_rgb(236,64,122)_66%,_rgb(253,196,53)_100%)] before:bg-[length:300%_300%] before:bg-[0%_0%] before:transition-all before:duration-1000 before:ease-in-out hover:before:bg-[100%_100%] before:-z-10 hover:border-[rgba(0,0,0,0)] ease-in-out duration-1000 hover:before:[scale:1.08_1.03] rounded-2xl before:rounded-2xl"
     @mouseenter="() => hovering(true)"
     @mouseleave="() => hovering(false)"
   >
@@ -74,7 +74,7 @@ const hovering = (hovers: boolean) => {
       <h3 class="text-md" :id="`title-${props.i}`">
         {{ props.title }}
       </h3>
-      <h4 class="text-sm mt-3" :id="`subtitle-${props.i}`">
+      <h4 class="text-[.8rem] mt-3" :id="`subtitle-${props.i}`">
         <span
           v-for="(arg, i) in subtitleArgs"
           :key="i"

@@ -8,7 +8,9 @@
       <div class="ml-5">
         Lars Boese (&quot;I&quot;, &quot;me&quot;, or &quot;my&quot;) operates
         the
-        <a href="https://www.ayakobot.com">https://www.ayakobot.com</a>
+        <a class="text-[#b0ff00]" href="https://www.ayakobot.com"
+          >https://www.ayakobot.com</a
+        >
         website and the &quot;Ayako#6768&quot; Discord Bot, with unique Discord
         User-ID &quot;650691698409734151&quot; (hereinafter referred to as the
         &quot;Service&quot;).
@@ -24,7 +26,9 @@
         accordance with this policy. Unless otherwise defined in this Privacy
         Policy, the terms used in this Privacy Policy have the same meanings as
         in my Terms and Conditions, accessible from
-        <a href="/terms">https://www.ayakobot.com/terms</a>
+        <a class="text-[#b0ff00]" href="/terms"
+          >https://www.ayakobot.com/terms</a
+        >
       </div>
     </div>
     <div class="ml-5">
@@ -36,7 +40,9 @@
           </div>
           <div class="ml-5">
             Service is the
-            <a href="https://www.ayakobot.com">https://www.ayakobot.com</a>
+            <a class="text-[#b0ff00]" href="https://www.ayakobot.com"
+              >https://www.ayakobot.com</a
+            >
             website and the &quot;Ayako#6768&quot; Discord Bot, with unique
             Discord User-ID &quot;650691698409734151&quot; developed and
             maintained by Lars Boese
@@ -455,7 +461,7 @@
             <div class="ml-5">
               For more information on the privacy practices of Hotjar, please
               visit the Hotjar Privacy &amp; Terms web page:
-              <a href="https://www.hotjar.com/privacy/">
+              <a class="text-[#b0ff00]" href="https://www.hotjar.com/privacy/">
                 Hotjar Privacy Policy
               </a>
             </div>
@@ -483,7 +489,10 @@
               You may opt out of the use of the DoubleClick Cookie for
               interest-based advertising by visiting the Google Ads Settings web
               page:
-              <a href="https://www.google.com/ads/preferences/">
+              <a
+                class="text-[#b0ff00]"
+                href="https://www.google.com/ads/preferences/"
+              >
                 Google Preferences
               </a>
             </div>
@@ -515,7 +524,10 @@
             </div>
             <div class="ml-5">
               Their Privacy Policy can be viewed at
-              <a href="https://www.paypal.com/webapps/mpp/ua/privacy-full">
+              <a
+                class="text-[#b0ff00]"
+                href="https://www.paypal.com/webapps/mpp/ua/privacy-full"
+              >
                 PayPal Privacy Policy
               </a>
             </div>
@@ -573,7 +585,9 @@
       <div class="ml-5">
         If you have any questions about this Privacy Policy, please contact me
         by email:
-        <a href="mailto:dev@ayakobot.com"> <span>dev@ayakobot.com</span> </a>
+        <a class="text-[#b0ff00]" href="mailto:dev@ayakobot.com">
+          <span>dev@ayakobot.com</span>
+        </a>
       </div>
     </div>
     <span data-ccpa-link="1"></span>

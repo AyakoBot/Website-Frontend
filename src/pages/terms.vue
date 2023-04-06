@@ -8,7 +8,9 @@
       <div class="ml-5">
         Please read these Terms of Service (&quot;Terms&quot;, &quot;Terms of
         Service&quot;) carefully before using the
-        <a href="https://www.ayakobot.com">https://www.ayakobot.com</a>
+        <a class="text-[#b0ff00]" href="https://www.ayakobot.com"
+          >https://www.ayakobot.com</a
+        >
         website (the &quot;Service&quot;) operated by Lars Boese (&quot;I&quot;,
         &quot;my&quot;, or &quot;me&quot;).
       </div>
@@ -169,7 +171,9 @@
       <div class="ml-5">
         If you have any questions about the Terms of Service, please contact me
         by email:
-        <a href="mailto:dev@ayakobot.com">dev@ayakobot.com</a>.
+        <a class="text-[#b0ff00]" href="mailto:dev@ayakobot.com"
+          >dev@ayakobot.com</a
+        >.
       </div>
     </div>
   </div>

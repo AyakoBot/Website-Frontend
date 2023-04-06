@@ -14,25 +14,24 @@ import ColorFade from "../colorFade.vue";
     </div>
 
     <div class="flex flex-col lg:flex-row w-full justify-around items-center">
-      <div class="flex items-center">
-        <img
-          src="https://cdn.ayakobot.com/website_assets/Icon.png"
-          draggable="false"
-          class="w-auto h-[15vmin] mt-10 mr-4"
-        />
-        <div class="flex justify-center items-center flex-col pt-10">
-          <div class="flex justify-center items-center">
-            <ColorFade
-              text="Ayako"
-              class="text-[10vmin] md:text-6xl font-bold pb-1"
-            />
-            <p class="text-[5vmin] md:text-sm text-red-600 mt-1 ml-3">
-              Discord Bot
-            </p>
+      <router-link to="/">
+        <div class="flex items-center">
+          <img
+            src="https://cdn.ayakobot.com/website_assets/Icon.png"
+            draggable="false"
+            class="w-auto h-[15vmin] mt-10 mr-4"
+          />
+          <div class="flex justify-center items-center flex-col pt-10">
+            <div class="flex justify-center items-center">
+              <ColorFade
+                text="Ayako"
+                class="text-[10vmin] md:text-6xl font-bold pb-1"
+              />
+            </div>
+            <h1 class="text-[5vmin] md:text-sm">ayakobot.com</h1>
           </div>
-          <h1 class="text-[5vmin] md:text-sm">ayakobot.com</h1>
         </div>
-      </div>
+      </router-link>
 
       <div
         class="flex justify-center mt-4 sm:mt-4 md:mt-4 lg:mt-4 lg:ml-4 flex-wrap"
@@ -76,7 +75,7 @@ import ColorFade from "../colorFade.vue";
       </div>
     </div>
 
-    <div class="mt-3 text-sm">
+    <div class="mt-3 text-[.5rem]">
       Copyright © {{ new Date().getFullYear() }} Ayako
     </div>
   </div>

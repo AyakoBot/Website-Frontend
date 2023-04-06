@@ -6,10 +6,10 @@ import Preview from "./preview.vue";
   <div class="mt-10 flex justify-center items-center flex-col p-10">
     <h1>Add Ayako to your Server and gain access to cool features like</h1>
 
-    <div class="flex justify-center items-center gap-10 flex-wrap">
+    <div class="flex justify-center items-center gap-10 flex-wrap w-full">
       <Preview
         :i="1"
-        title="Moderation"
+        title="Powerful Moderation"
         subtitle="Malware detector, Anti-Spam, Captcha Verification, Blacklist, Auto-Punishments, Strike-System, Logs, etc."
         img="https://cdn.ayakobot.com/website_assets/moderation.png"
         placeholderImg="https://cdn-icons-png.flaticon.com/512/928/928800.png"
