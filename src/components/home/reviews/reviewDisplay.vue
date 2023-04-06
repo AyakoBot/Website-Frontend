@@ -2,12 +2,13 @@
 import ReviewCarousel from "./reviewCarousel.vue";
 import ColorFade from "../../colorFade.vue";
 import type { Review as ReviewType } from "../../../types/Review";
+import env from "../../../env";
 
 const emit = defineEmits<{
   (e: "reviewHovered", arg: ReviewType | null): void;
 }>();
 
-const reviews = (await fetch("/api/reviews").then((r) =>
+const reviews = (await fetch(`${env.api}/reviews`).then((r) =>
   r.json()
 )) as ReviewType[];
 reviews.sort(() => 0.5 - Math.random());

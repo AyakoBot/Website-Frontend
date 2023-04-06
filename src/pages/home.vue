@@ -7,10 +7,6 @@ import ScrollMe from "../components/home/scrollMe.vue";
 import ServerDisplay from "../components/home/servers/serverDisplay.vue";
 import ServerLoading from "../components/home/servers/serverLoading.vue";
 import Preview from "../components/home/features/feature.vue";
-
-onresize = () => {
-  window.location.reload();
-};
 </script>
 
 <template>

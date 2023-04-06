@@ -3,8 +3,9 @@ import ServerCarousel from "./serverCarousel.vue";
 import ColorFade from "../../colorFade.vue";
 import type { Server as ServerType } from "../../../types/Server";
 import { ref, onMounted } from "vue";
+import env from "../../../env";
 
-const servers = (await fetch("/api/servers").then((r) => r.json())) as {
+const servers = (await fetch(`${env.api}/servers`).then((r) => r.json())) as {
   count: number;
   users: number;
   servers: ServerType[];

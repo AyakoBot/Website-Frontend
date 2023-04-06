@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Credit from "./credit.vue";
+import env from "../../env";
 
-const contributers = (await fetch("/api/contributers").then((r) =>
+const contributers = (await fetch(`${env.api}/contributers`).then((r) =>
   r.json()
 )) as {
   username: string;
