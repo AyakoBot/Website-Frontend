@@ -7,7 +7,7 @@ import home from "./pages/home.vue";
 import premium from "./pages/premium.vue";
 //import art from "./pages/art.vue";
 import credits from "./pages/credits.vue";
-import pivacy from "./pages/privacy.vue";
+import privacy from "./pages/privacy.vue";
 import terms from "./pages/terms.vue";
 import invite from "./pages/invite.vue";
 import support from "./pages/support.vue";
@@ -20,7 +20,7 @@ const routes = [
   { path: "/credits", component: credits },
   { path: "/invite", component: invite },
   { path: "/support", component: support },
-  { path: "/privacy", component: pivacy },
+  { path: "/privacy", component: privacy },
   { path: "/terms", component: terms },
   { path: "/:pathMatch(.*)*", component: unknownPage },
 ];
