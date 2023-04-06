@@ -81,7 +81,7 @@ const hovering = (hovers: boolean) => {
     @mouseleave="() => hovering(false)"
   >
     <div
-      class="h-[calc(100%-1.25rem)] w-[calc(100%-1.25rem)] p-5 flex justify-between items-center flex-col m-auto"
+      class="h-[calc(100%-1.25rem)] w-[calc(100%-1.25rem)] p-0 md:p-5 pt-4 flex justify-between items-center flex-col m-auto"
     >
       <h3 class="text-md" :id="`title-${props.i}`">
         {{ props.title }}
@@ -96,7 +96,7 @@ const hovering = (hovers: boolean) => {
       </h4>
       <img
         :src="props.img"
-        class="mt-5 rounded-2xl opacity-0 h-auto w-auto shadow-main"
+        class="mt-5 rounded-2xl opacity-0 h-auto w-auto max-h-60 shadow-main"
         :id="`img-${props.i}`"
         width="auto"
       />
