@@ -16,6 +16,9 @@ const hovering = (hovers: boolean) => {
   const placeholderImg = document.getElementById(
     `placeholderImg-${props.i}`
   ) as HTMLElement;
+  const hoverMeText = document.getElementById(
+    `hoverMe-${props.i}`
+  ) as HTMLElement;
 
   if (hovers) {
     isHovering = hovers;
@@ -37,11 +40,13 @@ const hovering = (hovers: boolean) => {
       );
     });
 
-    placeholderImg.animate([{ opacity: 1 }, { opacity: 0 }], {
-      duration: 300,
-      easing: "cubic-bezier(0.9, 0.06, 0.15, 0.9)",
-      fill: "forwards",
-    });
+    [placeholderImg, hoverMeText].forEach((e) =>
+      e.animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: 300,
+        easing: "cubic-bezier(0.9, 0.06, 0.15, 0.9)",
+        fill: "forwards",
+      })
+    );
   } else {
     isHovering = hovers;
     setTimeout(() => {
@@ -63,12 +68,14 @@ const hovering = (hovers: boolean) => {
         );
       });
 
-      placeholderImg.animate([{ opacity: 0 }, { opacity: 1 }], {
-        duration: 300,
-        easing: "cubic-bezier(0.9, 0.06, 0.15, 0.9)",
-        fill: "forwards",
-        delay: (subtitles.length + 1) * 70,
-      });
+      [placeholderImg, hoverMeText].forEach((e) =>
+        e.animate([{ opacity: 0 }, { opacity: 1 }], {
+          duration: 300,
+          easing: "cubic-bezier(0.9, 0.06, 0.15, 0.9)",
+          fill: "forwards",
+          delay: (subtitles.length + 1) * 70,
+        })
+      );
     }, 1500);
   }
 };
@@ -102,9 +109,12 @@ const hovering = (hovers: boolean) => {
       />
       <img
         :src="props.placeholderImg"
-        class="mt-5 rounded-2xl absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-1/2 -z-20"
+        class="mt-5 rounded-2xl absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 sm:w-1/2 w-1/2 md:w-1/4 xl:w-1/2 -z-20"
         :id="`placeholderImg-${props.i}`"
       />
+      <div :id="`hoverMe-${props.i}`" class="text-sm text-neutral-300/75">
+        Hover me
+      </div>
     </div>
   </div>
 </template>
