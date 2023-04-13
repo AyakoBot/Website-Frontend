@@ -2,8 +2,10 @@
 import { onMounted } from "vue";
 
 onMounted(() => {
-  window.open("https://invite.ayakobot.com/", "_blank");
-  window.location.href = "/";
+  setTimeout(() => {
+    window.open("https://invite.ayakobot.com/", "_blank");
+    window.location.href = "/";
+  }, 500);
 });
 </script>
 
