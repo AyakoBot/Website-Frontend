@@ -192,8 +192,9 @@
               <strong>Session Cookies</strong>
             </div>
             I use Session Cookies to keep you logged in to Discord on my site. I
-            also use Hotjar, which uses cookies for general statistical data to
-            help me learn and grow about how to make a better user experience.
+            also use Hotjar, Google Analytics and Cloudflare Analytics, which
+            use cookies for general statistical data to help me learn and grow
+            about how to make a better user experience.
           </li>
         </ul>
       </div>
@@ -450,9 +451,11 @@
               <strong>Hotjar</strong>
             </div>
             <div class="ml-5">
-              Hotjar is a web analytics service that tracks and reports website
-              traffic. Hotjar uses the data collected to track and monitor the
-              use of my Service. This data is shared with other Hotjar services.
+              Hotjar is an all-in-one analytics and feedback tool that helps
+              website owners and marketers understand how users interact with
+              their website. It offers a suite of tools to track and analyze
+              user behavior, as well as tools to collect user feedback and
+              insights.
             </div>
             <div class="ml-5">
               You can opt-out of having made your activity on the Service
@@ -463,6 +466,55 @@
               visit the Hotjar Privacy &amp; Terms web page:
               <a class="text-[#b0ff00]" href="https://www.hotjar.com/privacy/">
                 Hotjar Privacy Policy
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="ml-5">
+              <strong>Google Analytics</strong>
+            </div>
+            <div class="ml-5">
+              Google Analytics is a web analytics service offered by Google that
+              allows website owners and marketers to track and analyze website
+              traffic and user behavior. It provides valuable insights into how
+              visitors interact with a website, including information about
+              where they come from, how long they stay, which pages they visit,
+              and what actions they take on the site.
+            </div>
+            <div class="ml-5">
+              You can opt-out of having made your activity on the Service
+              available to Google by disabling Third-Party Cookies.
+            </div>
+            <div class="ml-5">
+              For more information on the privacy practices of Google, please
+              visit the Google Privacy &amp; Terms web page:
+              <a class="text-[#b0ff00]" href="https://policies.google.com/privacy/">
+                Google Privacy Policy
+              </a>
+            </div>
+          </li>
+          <li>
+            <div class="ml-5">
+              <strong>Cloudflare Analytics</strong>
+            </div>
+            <div class="ml-5">
+              Cloudflare Analytics is a web analytics service provided by
+              Cloudflare, a company that offers content delivery, DDoS
+              protection, and other web performance and security services.
+              Cloudflare Analytics provides insights into website traffic and
+              visitor behavior, helping website owners and administrators make
+              data-driven decisions to optimize their site's performance and
+              security.
+            </div>
+            <div class="ml-5">
+              You can opt-out of having made your activity on the Service
+              available to Cloudflare by disabling Third-Party Cookies.
+            </div>
+            <div class="ml-5">
+              For more information on the privacy practices of Cloudflare, please
+              visit the Cloudflare Privacy &amp; Terms web page:
+              <a class="text-[#b0ff00]" href="https://www.cloudflare.com/privacypolicy/">
+                Cloudflare Privacy Policy
               </a>
             </div>
           </li>
