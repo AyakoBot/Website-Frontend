@@ -13,7 +13,8 @@ const reviews = (await fetch(`${env.api}/reviews`).then((r) =>
 )) as ReviewType[];
 reviews.sort(() => 0.5 - Math.random());
 
-const averageScore = reviews.reduce((a, b) => a + b.score, 0) / reviews.length;
+const averageScore =
+  reviews.reduce((a, b) => a + Number(b.score) / 20, 0) / reviews.length;
 
 const hovering = (review: ReviewType | null) => {
   emit("reviewHovered", review);

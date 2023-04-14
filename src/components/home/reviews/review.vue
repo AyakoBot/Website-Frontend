@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
   content: string;
-  score: number;
+  score: string;
   username: string;
   avatar: string;
   index: number;

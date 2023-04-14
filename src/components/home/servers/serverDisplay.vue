@@ -6,8 +6,8 @@ import { ref, onMounted } from "vue";
 import env from "../../../env";
 
 const servers = (await fetch(`${env.api}/servers`).then((r) => r.json())) as {
-  count: number;
-  users: number;
+  count: string;
+  users: string;
   servers: ServerType[];
 };
 servers.servers.sort(() => 0.5 - Math.random());
@@ -44,8 +44,8 @@ onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
-        animateCountUp(servers.count, serverCount);
-        animateCountUp(servers.users, userCount);
+        animateCountUp(Number(servers.count), serverCount);
+        animateCountUp(Number(servers.users), userCount);
       } else {
         counters.forEach((c) => clearInterval(c));
         counters.clear();

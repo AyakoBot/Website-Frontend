@@ -5,8 +5,8 @@ const servers = {
   count: 0,
   servers: new Array(25).fill({
     name: "...",
-    iconURL: "https://cdn.ayakobot.com/Loading.gif",
-    members: "0",
+    icon: "https://cdn.ayakobot.com/Loading.gif",
+    membercount: "0",
   }),
 };
 </script>
@@ -21,15 +21,15 @@ const servers = {
       <div
         class="overflow-hidden rounded-2xl w-full h-full -z-10 absolute flex justify-center items-center"
       >
-        <img v-if="s.bannerURL" :src="s.bannerURL" class="scale-105 banner" />
+        <img v-if="s.banner" :src="s.banner" class="scale-105 banner" />
       </div>
       <Server
         :name="s.name"
         :key="i"
-        :members="s.members"
+        :membercount="s.membercount"
         :vanity="s.vanity"
-        :iconURL="s.iconURL"
-        :bannerURL="s.bannerURL"
+        :icon="s.icon"
+        :banner="s.banner"
       />
     </div>
   </div>

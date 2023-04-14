@@ -37,7 +37,7 @@ import ColorFade from "../colorFade.vue";
         class="flex justify-center mt-4 sm:mt-4 md:mt-4 lg:mt-4 lg:ml-4 flex-wrap"
       >
         <div class="flex flex-col items-center">
-          <!-- <FooterButton link="commands" text="Commands" /> -->
+          <FooterButton link="about" text="About Ayako" />
           <FooterButton
             link="https://support.ayakobot.com"
             :absolute="true"
@@ -54,7 +54,6 @@ import ColorFade from "../colorFade.vue";
             text="Vote"
             class="text-emerald-400"
           />
-          <!-- <FooterButton link="art" text="Artwork" /> -->
           <FooterButton
             link="https://www.patreon.com/Lars_und_so"
             :absolute="true"
@@ -67,7 +66,6 @@ import ColorFade from "../colorFade.vue";
             :absolute="true"
             text="Animekos"
           />
-          <!-- <FooterButton link="partners" text="Partners" /> -->
           <FooterButton link="credits" text="Creators" />
           <FooterButton link="terms" text="Terms" />
           <FooterButton link="privacy" text="Privacy" />

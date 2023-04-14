@@ -168,7 +168,7 @@ const content = ref("");
         <div class="flex flex-row m-auto justify-center items-center">
           <img
             :src="
-              hoveredReview?.poster.avatar ??
+              hoveredReview?.avatar ??
               'https://cdn.ayakobot.com/website_assets/UnknownPfp.png'
             "
             class="min-w-[2.5rem] max-w-[2.5rem] h-auto mr-5 rounded-full shadow-[0_0.1em_1em_0.5em_rgba(23,23,23,1)]"
@@ -177,7 +177,7 @@ const content = ref("");
             @error="() => pfpError()"
             v-if="!!hoveredReview"
           />
-          <div>{{ hoveredReview?.poster.username }}</div>
+          <div>{{ hoveredReview?.username }}</div>
         </div>
         <div class="flex justify-center items-center my-2">
           <img

@@ -9,8 +9,8 @@ const numberWithCommas = (x: number) => {
 
 const props = defineProps<{
   servers: {
-    count: number;
-    users: number;
+    count: string;
+    users: string;
     servers: ServerType[];
   };
 }>();
@@ -53,10 +53,10 @@ onbeforeunload = () => (interval ? clearInterval(interval) : null);
       v-for="(s, i) in servers"
       :name="s.name"
       :key="i"
-      :members="numberWithCommas(s.members)"
+      :membercount="numberWithCommas(Number(s.membercount))"
       :vanity="s.vanity"
-      :iconURL="s.iconURL"
-      :bannerURL="s.bannerURL"
+      :icon="s.icon"
+      :banner="s.banner"
       class="hover:scale-105 transition-all duration-300 server"
       draggable="false"
     />

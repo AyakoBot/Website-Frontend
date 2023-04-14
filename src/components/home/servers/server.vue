@@ -2,9 +2,9 @@
 const props = defineProps<{
   name: string;
   vanity?: string;
-  iconURL?: string;
-  members: string;
-  bannerURL?: string;
+  icon?: string;
+  membercount: string;
+  banner?: string;
 }>();
 </script>
 
@@ -18,8 +18,8 @@ const props = defineProps<{
       class="relative flex p-5 w-48 h-28 justify-between items-center rounded-2xl shadow-main"
     >
       <img
-        v-if="props.bannerURL"
-        :src="props.bannerURL"
+        v-if="props.banner"
+        :src="props.banner"
         class="rounded-2xl -z-10 absolute left-0 h-full w-full object-cover"
         draggable="false"
       />
@@ -28,7 +28,7 @@ const props = defineProps<{
       >
         <img
           :src="
-            props.iconURL ??
+            props.icon ??
             'https://cdn.ayakobot.com/website_assets/UnknownPfp.png'
           "
           class="min-w-[2.5rem] max-w-[2.5rem] h-auto rounded-full shadow-[0_0.1em_1em_0.5em_rgba(23,23,23,1)]"
@@ -51,7 +51,7 @@ const props = defineProps<{
             src="https://cdn.discordapp.com/emojis/1073254214995816489.webp"
             class="w-4"
           />
-          {{ props.members }}
+          {{ props.membercount }}
         </div>
       </div>
     </div>

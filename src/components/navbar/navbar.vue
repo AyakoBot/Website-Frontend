@@ -65,8 +65,8 @@ const menuToggle = () => {
         </div>
       </router-link>
       <div class="hidden xl:flex items-center">
+        <NavBarButton link="appeals" text="Punishment Appeals" />
         <NavBarButton link="invite" text="Invite" />
-        <!-- <NavBarButton link="commands" text="Commands" /> -->
         <NavBarButton link="support" text="Support" />
         <NavBarButton
           link="premium"
@@ -98,8 +98,8 @@ const menuToggle = () => {
       :class="{ hidden: !isMenuOpen }"
       id="menu"
     >
+      <NavBarButton link="appeals" text="Punishment Appeals" />
       <NavBarButton link="invite" text="Invite" />
-      <!-- <NavBarButton link="commands" text="Commands" /> -->
       <NavBarButton link="support" text="Support" />
       <NavBarButton link="premium" text="👑Premium👑" class="text-yellow-500" />
     </div>
