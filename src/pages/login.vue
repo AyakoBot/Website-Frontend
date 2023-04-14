@@ -2,36 +2,61 @@
 import Cookies from "js-cookie";
 import * as Router from "vue-router";
 import { onMounted } from "vue";
+import env from "../env.js";
 
 onMounted(async () => {
-  const finish = () => (window.location.href = "/");
-
-  const getRes = (
-    code: Router.LocationQueryValue | Router.LocationQueryValue[]
-  ) =>
-    fetch("https://api.ayakobot.com/login", {
+  const finish = async (token?: string) => {
+    const userData = await fetch("https://api.ayakobot.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ code }),
-    }).then((res) => res.json());
+      body: JSON.stringify({
+        token: token ?? Cookies.get("token"),
+      }),
+    });
+
+    if (userData.status !== 200) {
+      window.location.href = "/login";
+      return;
+    }
+
+    if (!token) token = Cookies.get("token");
+
+    if (!token) {
+      window.location.href = "/login";
+      return;
+    }
+
+    const user = (await userData.json()) as {
+      username: string;
+      avatar: string;
+      userid: string;
+    };
+    Cookies.set("token", token);
+    Cookies.set("username", user.username);
+    Cookies.set("id", user.userid);
+
+    window.location.href = "/";
+  };
 
   if (Cookies.get("token")) return finish();
 
-  const route = Router.useRoute();
-  if (!route.query.code) {
+  const accessToken = Router.useRoute()
+    .hash.split("&")
+    .find((arg) => arg.includes("access_token="))
+    ?.split("access_token=")[1];
+
+  if (!accessToken) {
     window.location.href =
-      "https://discord.com/api/oauth2/authorize?client_id=650691698409734151&redirect_uri=https%3A%2F%2Fayakobot.com%2Flogin&response_type=code&scope=identify%20guilds%20email";
+      env.redirectUrl[window.location.hostname as keyof typeof env.redirectUrl];
     return;
   }
 
-  const { code } = route.query;
-  if (!code) window.location.href = "/login";
-
-  const res = await getRes(code);
-  Cookies.set("token", res.token);
-
-  finish();
+  finish(accessToken);
 });
 </script>
+
+<template>
+  <img src="https://cdn.ayakobot.com/Loading.gif" class="m-auto mt-20" />
+</template>
