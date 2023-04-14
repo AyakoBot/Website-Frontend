@@ -10,7 +10,7 @@ const contributers = (await fetch(`${env.api}/contributers`).then((r) =>
   avatar: string;
   roles: string[];
   socials: string[];
-  type: string[];
+  socialstype: string[];
 }[];
 </script>
 
@@ -25,7 +25,7 @@ const contributers = (await fetch(`${env.api}/contributers`).then((r) =>
       :avatar="contributer.avatar"
       :roles="contributer.roles"
       :socials="contributer.socials"
-      :type="contributer.type"
+      :socialstype="contributer.socialstype"
     />
   </div>
 </template>

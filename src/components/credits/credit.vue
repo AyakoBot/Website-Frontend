@@ -7,7 +7,7 @@ const props = defineProps<{
   avatar: string;
   roles: string[];
   socials: string[];
-  type: string[];
+  socialstype: string[];
 }>();
 </script>
 
@@ -18,7 +18,7 @@ const props = defineProps<{
     <div class="mt-3 flex gap-1 text-sm">
       <Socials
         v-for="(s, i) in props.socials"
-        :name="props.type[i]"
+        :name="props.socialstype[i]"
         :link="s"
       />
     </div>
