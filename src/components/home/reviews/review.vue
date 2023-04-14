@@ -54,7 +54,7 @@ const pfpError = (index: number) => {
           <img
             src="https://cdn.discordapp.com/emojis/1089123327467081748.webp"
             class="w-3 h-auto mx-0.5"
-            v-for="i in props.score"
+            v-for="i in Number(props.score) / 20"
             :key="i"
           />
         </div>
