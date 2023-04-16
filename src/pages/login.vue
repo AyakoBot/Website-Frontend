@@ -35,6 +35,7 @@ onMounted(async () => {
     };
     Cookies.set("token", token);
     Cookies.set("username", user.username);
+    Cookies.set("avatar", user.avatar);
     Cookies.set("id", user.userid);
 
     window.location.href = "/";
@@ -58,5 +59,5 @@ onMounted(async () => {
 </script>
 
 <template>
-  <img src="https://cdn.ayakobot.com/Loading.gif" class="m-auto mt-20" />
+  <img :src="`${env.cdn}/Loading.gif`" class="m-auto mt-20" />
 </template>

@@ -15,21 +15,24 @@ import appeals from "./pages/appeals.vue";
 import login from "./pages/login.vue";
 import unknownPage from "./pages/404.vue";
 
-const routes = [
-  { path: "/", component: home },
-  { path: "/premium", component: premium },
-  { path: "/credits", component: credits },
-  { path: "/invite", component: invite },
-  { path: "/support", component: support },
-  { path: "/privacy", component: privacy },
-  { path: "/terms", component: terms },
-  { path: "/appeals", component: appeals },
-  { path: "/login", component: login },
-  { path: "/:pathMatch(.*)*", component: unknownPage },
-];
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHistory(),
-  routes,
+  routes: [
+    { path: "/", component: home },
+    { path: "/premium", component: premium },
+    { path: "/credits", component: credits },
+    { path: "/invite", component: invite },
+    { path: "/support", component: support },
+    { path: "/privacy", component: privacy },
+    { path: "/terms", component: terms },
+    { path: "/appeals", component: appeals },
+    {
+      path: "/appeals/:id",
+      component: () => import("./pages/appeals/server.vue"),
+    },
+    { path: "/login", component: login },
+    { path: "/:pathMatch(.*)*", component: unknownPage },
+  ],
 });
 
 const app = createApp(App);
