@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import env from "../../../env.js";
+
 const props = defineProps<{
   content: string;
   score: string;
@@ -11,7 +13,7 @@ const pfpError = (index: number) => {
   const pfp = document.getElementById(
     `pfp-${index}`
   ) as HTMLImageElement | null;
-  if (pfp) pfp.src = "https://cdn.ayakobot.com/website_assets/UnknownPfp.png";
+  if (pfp) pfp.src = `${env.cdn}/website_assets/UnknownPfp.png`;
 };
 </script>
 
@@ -29,10 +31,7 @@ const pfpError = (index: number) => {
         class="min-w-11 min-h-11 rounded-full bg-neutral-900/75 flex justify-center items-center"
       >
         <img
-          :src="
-            props.avatar ??
-            'https://cdn.ayakobot.com/website_assets/UnknownPfp.png'
-          "
+          :src="props.avatar ?? `${env.cdn}/website_assets/UnknownPfp.png`"
           class="min-w-[2.5rem] max-w-[2.5rem] h-auto rounded-full shadow-[0_0.1em_1em_0.5em_rgba(23,23,23,1)]"
           draggable="false"
           :id="`pfp-${props.index}`"

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import env from '../env.js';
+</script>
+
 <template>
   <div class="flex flex-wrap justify-center items-center mt-20">
     <div class="w-full md:w-auto flex justify-center items-center">
@@ -10,7 +14,7 @@
       </RouterLink>
     </div>
     <img
-      src="https://cdn.ayakobot.com/website_assets/greenFlower.png"
+      :src="`${env.cdn}/website_assets/greenFlower.png`"
       class="w-10 mx-5"
       id="flowerSpin"
       draggable="false"

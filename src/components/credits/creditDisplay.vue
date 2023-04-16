@@ -9,8 +9,8 @@ const contributers = (await fetch(`${env.api}/contributers`).then((r) =>
   userid: string;
   avatar: string;
   roles: string[];
-  socials: string[];
-  socialstype: string[];
+  socials?: string[];
+  socialstype?: string[];
 }[];
 </script>
 

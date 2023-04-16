@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Preview from "./preview.vue";
+import env from "../../../env.js";
 </script>
 
 <template>
@@ -11,7 +12,7 @@ import Preview from "./preview.vue";
         :i="1"
         title="Powerful Moderation"
         subtitle="Malware detector, Anti-Spam, Captcha Verification, Blacklist, Auto-Punishments, Strike-System, Logs, etc."
-        img="https://cdn.ayakobot.com/website_assets/moderation.png"
+        :img="`${env.cdn}/website_assets/moderation.png`"
         placeholderImg="https://cdn-icons-png.flaticon.com/512/928/928800.png"
         class="mt-10"
       />
@@ -19,7 +20,7 @@ import Preview from "./preview.vue";
         :i="2"
         title="Server Customization"
         subtitle="Levelling System, Role-Play, Server Currency, Welcome Messages, Giveaways with Requirements, etc."
-        img="https://cdn.ayakobot.com/website_assets/roles.png"
+        :img="`${env.cdn}/website_assets/roles.png`"
         placeholderImg="https://cdn-icons-png.flaticon.com/512/2593/2593065.png"
         class="mt-10"
       />
@@ -27,7 +28,7 @@ import Preview from "./preview.vue";
         :i="3"
         title="Role Management"
         subtitle="Button Roles, Category Roles, Auto-Roles, Sticky Roles, Booster Roles, Self-Roles, etc."
-        img="https://cdn.ayakobot.com/website_assets/rp.png"
+        :img="`${env.cdn}/website_assets/rp.png`"
         placeholderImg="https://cdn-icons-png.flaticon.com/512/6596/6596902.png"
         class="mt-10"
       />

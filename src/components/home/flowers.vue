@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { useWindowSize } from "@vueuse/core";
 import { onMounted, onBeforeUnmount } from "vue";
+import env from "../../env.js";
 
-const flower = "https://cdn.ayakobot.com/website_assets/flower.png";
+const flower = `${env.cdn}/website_assets/flower.png`;
 const animationOptions = {
   duration: 2000,
   delay: 500,

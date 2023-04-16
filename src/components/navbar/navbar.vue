@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import NavBarButton from "./navbarButton.vue";
 import { ref } from "vue";
+import env from "../../env.js";
 
 const isMenuOpen = ref(false);
 
@@ -57,7 +58,7 @@ const menuToggle = () => {
         <div class="flex items-center">
           <img
             class="w-10 h-auto"
-            src="https://cdn.ayakobot.com/website_assets/NavBarIcon.png"
+            :src="`${env.cdn}/website_assets/NavBarIcon.png`"
             alt="Ayako logo"
           />
           <h1 class="text-lg ml-2 font-bold text-white">Ayako</h1>

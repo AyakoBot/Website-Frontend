@@ -5,6 +5,7 @@ import ReviewLoading from "./reviewLoading.vue";
 import { onMounted, ref } from "vue";
 import { useWindowSize } from "@vueuse/core";
 import anime from "animejs";
+import env from "../../../env.js";
 
 const { width, height } = useWindowSize();
 const divideBy = 50;
@@ -136,7 +137,7 @@ const getRandomHexColor = (): string => {
 
 const pfpError = () => {
   const pfp = document.getElementById("reviewPfp") as HTMLImageElement | null;
-  if (pfp) pfp.src = "https://cdn.ayakobot.com/website_assets/UnknownPfp.png";
+  if (pfp) pfp.src = `${env.cdn}/website_assets/UnknownPfp.png`;
 };
 
 const content = ref("");
@@ -169,7 +170,7 @@ const content = ref("");
           <img
             :src="
               hoveredReview?.avatar ??
-              'https://cdn.ayakobot.com/website_assets/UnknownPfp.png'
+              `${env.cdn}/website_assets/UnknownPfp.png`
             "
             class="min-w-[2.5rem] max-w-[2.5rem] h-auto mr-5 rounded-full shadow-[0_0.1em_1em_0.5em_rgba(23,23,23,1)]"
             draggable="false"
@@ -204,7 +205,7 @@ const content = ref("");
           class="flex justify-center items-center -translate-y-1/2 md:mt-10 mt-20 flex-wrap"
         >
           <img
-            src="https://cdn.ayakobot.com/website_assets/Icon.png"
+            :src="`${env.cdn}/website_assets/Icon.png`"
             class="w-40 mx-10 h-auto"
           />
           <div class="mx-[200%] md:mx-0">+</div>

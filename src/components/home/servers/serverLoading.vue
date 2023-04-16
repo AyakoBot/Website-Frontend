@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import Server from "./server.vue";
+import env from "../../../env.js";
 
 const servers = {
   count: 0,
   servers: new Array(25).fill({
     name: "...",
-    icon: "https://cdn.ayakobot.com/Loading.gif",
+    icon: `${env.cdn}/Loading.gif`,
     membercount: "0",
   }),
 };

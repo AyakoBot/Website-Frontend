@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import FooterButton from "../footer/footerButton.vue";
 import ColorFade from "../colorFade.vue";
+import env from "../../env.js";
 </script>
 
 <template>
   <div class="w-full h-70 mt-auto bg-neutral-900/75 shadow-main z-[9999]">
     <div class="relative w-full">
       <img
-        src="https://cdn.ayakobot.com/website_assets/ayakopeeking.png"
+        :src="`${env.cdn}/website_assets/ayakopeeking.png`"
         class="absolute bottom-0 right-9 w-6"
         draggable="false"
       />
@@ -17,7 +18,7 @@ import ColorFade from "../colorFade.vue";
       <router-link to="/">
         <div class="flex items-center">
           <img
-            src="https://cdn.ayakobot.com/website_assets/Icon.png"
+            :src="`${env.cdn}/website_assets/Icon.png`"
             draggable="false"
             class="w-auto h-[15vmin] mt-10 mr-4"
           />
@@ -37,7 +38,6 @@ import ColorFade from "../colorFade.vue";
         class="flex justify-center mt-4 sm:mt-4 md:mt-4 lg:mt-4 lg:ml-4 flex-wrap"
       >
         <div class="flex flex-col items-center">
-          <FooterButton link="about" text="About Ayako" />
           <FooterButton
             link="https://support.ayakobot.com"
             :absolute="true"

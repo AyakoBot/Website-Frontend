@@ -1,8 +1,12 @@
+<script setup lang="ts">
+import env from "../env.js";
+</script>
+
 <template>
   <div class="h-screen flex items-center justify-center -mt-20">
     <div class="max-w-lg mx-auto text-center">
       <img
-        src="https://cdn.ayakobot.com/website_assets/ayakodevil.png"
+        :src="`${env.cdn}/website_assets/ayakodevil.png`"
         class="w-30 h-auto rounded-2xl m-auto"
         draggable="false"
       />

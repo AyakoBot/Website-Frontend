@@ -6,19 +6,24 @@ const props = defineProps<{
   username: string;
   avatar: string;
   roles: string[];
-  socials: string[];
-  socialstype: string[];
+  socials?: string[];
+  socialstype?: string[];
 }>();
 </script>
 
 <template>
   <div class="flex justify-start items-center flex-col">
     <div class="text-sm">{{ props.username }}</div>
-    <img :src="props.avatar" class="rounded-full mt-3 shadow-main" alt="" draggable="false" />
+    <img
+      :src="props.avatar"
+      class="rounded-full mt-3 shadow-main"
+      alt=""
+      draggable="false"
+    />
     <div class="mt-3 flex gap-1 text-sm">
       <Socials
         v-for="(s, i) in props.socials"
-        :name="props.socialstype[i]"
+        :name="props.socialstype?.[i] ?? ''"
         :link="s"
       />
     </div>

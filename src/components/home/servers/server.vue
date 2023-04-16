@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import env from "../../../env.js";
+
 const props = defineProps<{
   name: string;
   vanity?: string;
@@ -27,10 +29,7 @@ const props = defineProps<{
         class="min-w-11 min-h-11 rounded-full bg-neutral-900/75 flex justify-center items-center"
       >
         <img
-          :src="
-            props.icon ??
-            'https://cdn.ayakobot.com/website_assets/UnknownPfp.png'
-          "
+          :src="props.icon ?? `${env.cdn}/website_assets/UnknownPfp.png`"
           class="min-w-[2.5rem] max-w-[2.5rem] h-auto rounded-full shadow-[0_0.1em_1em_0.5em_rgba(23,23,23,1)]"
         />
       </div>
