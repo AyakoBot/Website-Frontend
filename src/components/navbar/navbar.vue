@@ -2,6 +2,7 @@
 import NavBarButton from "./navbarButton.vue";
 import { ref } from "vue";
 import env from "../../env.js";
+import { onBeforeRouteLeave, onBeforeRouteUpdate } from "vue-router";
 
 const isMenuOpen = ref(false);
 
@@ -66,7 +67,7 @@ const menuToggle = () => {
         </div>
       </router-link>
       <div class="hidden xl:flex items-center">
-        <NavBarButton link="appeals" text="Punishment Appeals" />
+        <NavBarButton link="appeals" text="Appeals" />
         <NavBarButton link="invite" text="Invite" />
         <NavBarButton link="support" text="Support" />
         <NavBarButton

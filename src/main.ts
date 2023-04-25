@@ -26,11 +26,19 @@ const router = VueRouter.createRouter({
     { path: "/privacy", component: privacy },
     { path: "/terms", component: terms },
     { path: "/appeals", component: appeals },
-    {
-      path: "/appeals/:id",
-      component: () => import("./pages/appeals/server.vue"),
-    },
     { path: "/login", component: login },
+    {
+      path: "/servers/:guildid/appeal",
+      component: () => import("./pages/servers/appeal.vue"),
+    },
+    {
+      path: "/servers/:guildid/appeal/:punishmentid",
+      component: () => import("./pages/servers/punishment.vue"),
+    },
+    {
+      path: "/servers/:guildid/appeal/:punishmentid/success",
+      component: () => import("./pages/servers/appealSuccess.vue"),
+    },
     { path: "/:pathMatch(.*)*", component: unknownPage },
   ],
 });
