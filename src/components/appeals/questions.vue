@@ -14,11 +14,14 @@ const punishmentid = useRouter().currentRoute.value.params.punishmentid;
 
 const appealForm = ref<InstanceType<typeof AppealForm> | null>(null);
 
-const res = (await fetch(`${env.api}/appeals/questions?guild=${guildid}`, {
-  headers: {
-    Authorization: token as string,
-  },
-}).then((r) => r.json())) as
+const res = (await fetch(
+  `${env.api}/appeals/questions?guild=${guildid}&punishment=${punishmentid}`,
+  {
+    headers: {
+      Authorization: token as string,
+    },
+  }
+).then((r) => r.json())) as
   | {
       question: string;
       answertype:
@@ -57,12 +60,23 @@ const showErrorModal = ref(false);
 
 <template>
   <div class="relative">
-    <ErrorModal v-if="showErrorModal" @close="() => (showErrorModal = false)" />
+    <RouterLink
+      class="text-sm text-[#fe3521] p-1 px-6 bg-white rounded-xl hover:text-white hover:bg-[#fe3521] transition-all font-bold absolute left-9"
+      :to="`/appeals/${guildid}`"
+      >⬅️ Back</RouterLink
+    >
+
+    <ErrorModal
+      v-if="showErrorModal"
+      @close="() => (showErrorModal = false)"
+      class="pt-10"
+    />
 
     <AppealForm
       v-if="Array.isArray(res) && res.length"
       :questions="res"
       ref="appealForm"
+      class="pt-10"
       @error="() => (showErrorModal = true)"
     />
 
@@ -78,8 +92,16 @@ const showErrorModal = ref(false);
         Finish Appeal
       </button>
     </div>
-    <div v-else-if="res.hasAppealed" class="text-sm">
-      You have already appealed this punishment
+    <div
+      v-else-if="res.hasAppealed"
+      class="text-sm flex justify-center items-center flex-col gap-4"
+    >
+      <div>You have already appealed this punishment</div>
+      <RouterLink
+        class="text-sm text-[#fe3521] p-1 px-6 bg-white rounded-xl hover:text-white hover:bg-[#fe3521] transition-all font-bold"
+        :to="`/appeals/${guildid}`"
+        >⬅️ Back</RouterLink
+      >
     </div>
   </div>
 </template>
