@@ -21,6 +21,10 @@ const { questions } = defineProps<{
   }[];
 }>();
 
+const emits = defineEmits<{
+  (e: "error"): void;
+}>();
+
 const token = Cookies.get("token");
 if (!token) window.location.href = "/login";
 
@@ -38,16 +42,12 @@ const finishAppeal = () => {
         Authorization: token as string,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify([]),
+      body: JSON.stringify(answers.value),
     }
   ).then((r) => {
-    if (r.status === 200)
+    if (r.status === 200) {
       window.location.href = `/servers/${guildid}/appeal/${punishmentid}/success`;
-    else {
-      alert(
-        "There was an error when trying to process your request. Please try again later."
-      );
-    }
+    } else emits("error");
   });
 };
 
@@ -70,23 +70,33 @@ const updateAppeal = (answer: {
   canAppeal.value = answers.value.every(
     (a) => a.value !== null || a.value !== ""
   );
-
-  console.log(answers.value);
+  answers.value = answers.value.filter(
+    (a) => a.value !== null && a.value !== ""
+  );
 };
 </script>
 
 <template>
-  <Question
-    v-for="(q, i) in questions"
-    :q="q"
-    :key="q.question"
-    @updateAppeal="(answer) => updateAppeal(answer)"
-  />
-  <input
-    class="mt-2 bg-gradient-to-r from-[#fe3521] via-[#3dff56] to-[#fe3521] bg-[size:200%] p-1 px-6 rounded-xl text-lg transition-all bg-[position:0%_center] hover:bg-[position:-100%_center] font-bold shadow-main disabled:cursor-not-allowed"
-    :disabled="!canAppeal"
-    @submit.prevent="() => finishAppeal()"
-    type="submit"
-    value="Finish Appeal"
-  />
+  <form
+    :onsubmit="
+      () => {
+        finishAppeal();
+        return false;
+      }
+    "
+    :questions="questions"
+  >
+    <Question
+      v-for="(q, i) in questions"
+      :q="q"
+      :key="q.question"
+      @updateAppeal="(answer) => updateAppeal(answer)"
+    />
+    <input
+      class="mt-2 bg-gradient-to-r from-[#fe3521] via-[#3dff56] to-[#fe3521] bg-[size:200%] p-1 px-6 rounded-xl text-lg transition-all bg-[position:0%_center] hover:bg-[position:-100%_center] font-bold shadow-main disabled:cursor-not-allowed"
+      @submit.prevent="() => finishAppeal()"
+      type="submit"
+      value="Finish Appeal"
+    />
+  </form>
 </template>

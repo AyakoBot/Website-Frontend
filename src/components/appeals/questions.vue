@@ -12,6 +12,8 @@ if (!token) window.location.href = "/login";
 const guildid = useRouter().currentRoute.value.params.guildid;
 const punishmentid = useRouter().currentRoute.value.params.punishmentid;
 
+const appealForm = ref<InstanceType<typeof AppealForm> | null>(null);
+
 const res = (await fetch(`${env.api}/appeals/questions?guild=${guildid}`, {
   headers: {
     Authorization: token as string,
@@ -57,9 +59,13 @@ const showErrorModal = ref(false);
   <div class="relative">
     <ErrorModal v-if="showErrorModal" @close="() => (showErrorModal = false)" />
 
-    <form v-if="Array.isArray(res) && res.length">
-      <AppealForm :questions="res" />
-    </form>
+    <AppealForm
+      v-if="Array.isArray(res) && res.length"
+      :questions="res"
+      ref="appealForm"
+      @error="() => (showErrorModal = true)"
+    />
+
     <div v-else-if="Array.isArray(res)">
       <div>No questions found!</div>
       <div class="text-sm mt-2">

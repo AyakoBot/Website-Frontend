@@ -36,6 +36,6 @@ const emits = defineEmits<{
     <div>
       {{ q.question }}
     </div>
-    <ChooseInput :q="q" @updateInput="emits('updateAppeal', $event)" />
+    <ChooseInput :q="q" @updateInput="(e) => emits('updateAppeal', e)" />
   </div>
 </template>
