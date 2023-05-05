@@ -37,7 +37,6 @@ import ColorFade from "../colorFade.vue";
         class="flex justify-center mt-4 sm:mt-4 md:mt-4 lg:mt-4 lg:ml-4 flex-wrap"
       >
         <div class="flex flex-col items-center">
-          <FooterButton link="about" text="About Ayako" />
           <FooterButton
             link="https://support.ayakobot.com"
             :absolute="true"
