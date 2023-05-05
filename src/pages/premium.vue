@@ -12,7 +12,7 @@
       <p class="text-2xl">Consider donating</p>
       <p class="text-xl mb-6">and help Ayako stay free forever</p>
       <a
-        href="https://support.ayakobot.com"
+        href="https://www.patreon.com/Lars_und_so"
         class="bg-gradient-to-r from-[#fe3521] via-[#3dff56] to-[#fe3521] bg-[size:200%] p-2 px-6 rounded-xl text-lg transition-all bg-[position:0%_center] hover:bg-[position:-100%_center] font-bold"
         target="_blank"
       >
