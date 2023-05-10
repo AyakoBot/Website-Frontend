@@ -5,59 +5,59 @@ import { onMounted } from "vue";
 import env from "../env.js";
 
 onMounted(async () => {
-  const finish = async (token?: string) => {
-    const userData = await fetch("https://api.ayakobot.com/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        token: token ?? Cookies.get("token"),
-      }),
-    });
+ const finish = async (code: string) => {
+  const userData = await fetch("https://api.ayakobot.com/login", {
+   method: "POST",
+   headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+   },
+   body: new URLSearchParams({
+    code,
+   }),
+  });
 
-    if (userData.status !== 200) {
-      window.location.href = "/login";
-      return;
-    }
+  console.log(userData.status);
 
-    if (!token) token = Cookies.get("token");
-
-    if (!token) {
-      window.location.href = "/login";
-      return;
-    }
-
-    const user = (await userData.json()) as {
-      username: string;
-      avatar: string;
-      userid: string;
-    };
-    Cookies.set("token", token);
-    Cookies.set("username", user.username);
-    Cookies.set("avatar", user.avatar);
-    Cookies.set("id", user.userid);
-
-    window.location.href = "/";
-  };
-
-  if (Cookies.get("token")) return finish();
-
-  const accessToken = Router.useRoute()
-    .hash.split("&")
-    .find((arg) => arg.includes("access_token="))
-    ?.split("access_token=")[1];
-
-  if (!accessToken) {
-    window.location.href =
-      env.redirectUrl[window.location.hostname as keyof typeof env.redirectUrl];
-    return;
+  if (userData.status !== 200) {
+   window.location.href =
+    env.redirectUrl[window.location.hostname as keyof typeof env.redirectUrl];
+   return;
   }
 
-  finish(accessToken);
+  const user = (await userData.json()) as {
+   username: string;
+   avatar: string;
+   userid: string;
+   token: string;
+  };
+
+  console.log(user);
+
+  Cookies.set("token", user.token);
+  Cookies.set("username", user.username);
+  Cookies.set("avatar", user.avatar);
+  Cookies.set("id", user.userid);
+
+  window.location.href = "/";
+ };
+
+ if (Cookies.get("token")) {
+  window.location.href = "/";
+  return;
+ }
+
+ const code = Router.useRoute().query.code as string | undefined;
+
+ if (!code) {
+  window.location.href =
+   env.redirectUrl[window.location.hostname as keyof typeof env.redirectUrl];
+  return;
+ }
+
+ finish(code);
 });
 </script>
 
 <template>
-  <img :src="`${env.cdn}/Loading.gif`" class="m-auto mt-20" />
+ <img :src="`${env.cdn}/Loading.gif`" class="m-auto mt-20" />
 </template>
