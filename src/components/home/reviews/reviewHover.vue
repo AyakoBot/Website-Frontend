@@ -99,8 +99,8 @@ const handleHovered = (review: ReviewType | null) => {
    }
 
    timesContentChanged += 1;
-   content.value += Number(hoveredReview.value?.content[timesContentChanged - 1]);
-  }, 20);
+   content.value += String(hoveredReview.value?.content[timesContentChanged - 1]);
+  }, 10);
  } else if (interval) {
   clearInterval(interval);
   content.value = '';
@@ -165,16 +165,16 @@ const content = ref('');
       <img
        v-if="!!hoveredReview"
        id="reviewPfp"
-       :src="hoveredReview?.avatar ?? `${env.cdn}/website_assets/UnknownPfp.png`"
+       :src="hoveredReview.avatar ?? `${env.cdn}/website_assets/UnknownPfp.png`"
        class="min-w-[2.5rem] max-w-[2.5rem] h-auto mr-5 rounded-full shadow-[0_0.1em_1em_0.5em_rgba(23,23,23,1)]"
        draggable="false"
        @error="() => pfpError()"
       />
       <div>{{ hoveredReview?.username }}</div>
      </div>
-     <div class="flex justify-center items-center my-2">
+     <div v-if="hoveredReview" class="flex justify-center items-center my-2">
       <img
-       v-for="i in hoveredReview?.score"
+       v-for="i in Number(hoveredReview.score) / 20"
        :key="i"
        src="https://cdn.discordapp.com/emojis/1089123327467081748.webp"
        class="w-3 h-auto mx-0.5"
@@ -192,7 +192,10 @@ const content = ref('');
      <div class="flex justify-center items-center -translate-y-1/2 md:mt-10 mt-20 flex-wrap">
       <img :src="`${env.cdn}/website_assets/Icon.png`" class="w-40 mx-10 h-auto" />
       <div class="mx-[200%] md:mx-0">+</div>
-      <img src="https://top.gg/favicon.png" class="w-40 mx-10 h-auto" />
+      <img
+       src="https://pbs.twimg.com/profile_images/1502418247706046466/EMg2DjtV_400x400.jpg"
+       class="w-40 mx-10 h-auto rounded-full"
+      />
      </div>
      <div class="-mt-96">Hover over a Review to see its Content</div>
     </div>

@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import NavBarButton from './navbarButton.vue';
 import { ref } from 'vue';
+import NavBarButton from './navbarButton.vue';
 import env from '../../env.js';
-import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router';
 
 const isMenuOpen = ref(false);
 
 const menuToggle = () => {
  const menu = document.getElementById('menu') as HTMLElement;
  if (isMenuOpen.value) {
-  setTimeout(() => (isMenuOpen.value = false), 300);
+  setTimeout(() => {
+   isMenuOpen.value = false;
+  }, 300);
 
   menu.animate(
    [
@@ -70,8 +71,8 @@ const menuToggle = () => {
    </div>
    <div class="flex xl:hidden">
     <button
-     @click="() => menuToggle()"
      class="text-white hover:text-gray-300 focus:outline-none focus:text-gray-300"
+     @click="() => menuToggle()"
     >
      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <title>Menu</title>
@@ -84,11 +85,11 @@ const menuToggle = () => {
    </div>
   </nav>
   <div
+   id="menu"
    class="xl:hidden bg-neutral-900/75 absolute w-full shadow-main"
    :class="{ hidden: !isMenuOpen }"
-   id="menu"
   >
-   <NavBarButton link="appeals" text="Punishment Appeals" />
+   <!-- <NavBarButton link="appeals" text="Punishment Appeals" /> -->
    <NavBarButton link="invite" text="Invite" />
    <NavBarButton link="support" text="Support" />
    <NavBarButton link="premium" text="👑Premium👑" class="text-yellow-500" />
