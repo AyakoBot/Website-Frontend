@@ -1,0 +1,79 @@
+{
+ "settings": {
+  "import/parsers": {
+   "@typescript-eslint/parser": [".ts"]
+  },
+  "import/resolver": {
+   "typescript": {}
+  }
+ },
+ "plugins": ["@typescript-eslint", "prettier"],
+ "env": {
+  "browser": true,
+  "es2021": true
+ },
+ "extends": [
+  "airbnb-base",
+  "plugin:prettier/recommended",
+  "plugin:vue/strongly-recommended",
+  "airbnb",
+  "eslint:recommended",
+  "plugin:@typescript-eslint/recommended",
+  "plugin:vue/vue3-recommended",
+  "plugin:vue/base",
+  "plugin:vue/essential",
+  "eslint-config-prettier",
+  "@vue/typescript/recommended",
+  "prettier"
+ ],
+ "parser": "vue-eslint-parser",
+ "parserOptions": {
+  "parser": "@typescript-eslint/parser",
+  "requireConfigFile": false,
+  "ecmaVersion": "latest",
+  "ecmaFeatures": {
+   "experimentalObjectRestSpread": true
+  }
+ },
+ "rules": {
+  "linebreak-style": "off",
+  "import/extensions": [
+   "error",
+   "ignorePackages",
+   {
+    "js": "never",
+    "jsx": "never",
+    "ts": "never",
+    "tsx": "never"
+   }
+  ],
+  "no-use-before-define": "off",
+  "no-bitwise": "off",
+  "no-param-reassign": "off",
+  "no-underscore-dangle": "off",
+  "no-confusing-arrow": "off",
+  "implicit-arrow-linebreak": "off",
+  "indent": "off",
+  "function-paren-newline": "off",
+  "operator-linebreak": "off",
+  "nonblock-statement-body-position": "off",
+  "padded-blocks": "off",
+  "quotes": "off",
+  "object-curly-newline": "off",
+  "lines-between-class-members": "off",
+  "import/no-extraneous-dependencies": "off",
+  "no-shadow": [
+   "error",
+   { "builtinGlobals": false, "hoist": "functions", "allow": [], "ignoreOnInitialization": false }
+  ],
+  "no-new": "off",
+  "prettier/prettier": [
+   "warn",
+   {
+    "singleQuote": true,
+    "semi": true
+   }
+  ],
+  "vue/multi-word-component-names": "off"
+ }
+}
