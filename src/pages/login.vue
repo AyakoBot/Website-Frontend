@@ -16,8 +16,6 @@ onMounted(async () => {
    }),
   });
 
-  console.log(userData.status);
-
   if (userData.status !== 200) {
    window.location.href =
     env.redirectUrl[window.location.hostname as keyof typeof env.redirectUrl];
@@ -30,8 +28,6 @@ onMounted(async () => {
    userid: string;
    token: string;
   };
-
-  console.log(user);
 
   Cookies.set("token", user.token);
   Cookies.set("username", user.username);
