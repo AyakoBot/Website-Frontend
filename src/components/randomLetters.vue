@@ -8,7 +8,7 @@ const { text, isTitle, animate } = defineProps<{
   animate?: boolean;
 }>();
 const title = ref(text);
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_.,!=+~/\\*&^%$#@1234567890:;`";
 const classes = `randomLetters font-['IBM_Plex_Mono'] opacity-0 ${
   isTitle ? `md:text-[10vmin] text-[20vmin] mt-72 mb-10 uppercase` : `md:text-[4vmin] text-[6vmin]`
 }`;
