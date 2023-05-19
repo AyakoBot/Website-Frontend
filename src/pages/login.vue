@@ -37,8 +37,10 @@ onMounted(async () => {
  };
 
  if (Cookies.get('token')) {
-  window.location.href = '/';
-  return;
+  Cookies.remove('token');
+  Cookies.remove('username');
+  Cookies.remove('avatar');
+  Cookies.remove('id');
  }
 
  const code = Router.useRoute().query.code as string | undefined;
