@@ -2,14 +2,16 @@
 import Credit from './credit.vue';
 import env from '../../env';
 
-const contributers = (await fetch(`${env.api}/contributers`).then((r) => r.json())) as {
- username: string;
- userid: string;
- avatar: string;
- roles: string[];
- socials?: string[];
- socialstype?: string[];
-}[];
+const contributers = (
+  (await fetch(`${env.api}/contributers`).then((r) => r.json())) as {
+  username: string;
+  userid: string;
+  avatar: string;
+  roles: string[];
+  socials?: string[];
+  socialstype?: string[];
+ }[]
+).sort((a, b) => b.roles.length - a.roles.length);
 </script>
 
 <template>
